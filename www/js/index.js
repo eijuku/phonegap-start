@@ -22,6 +22,8 @@ var app = {
     },
     bind: function() {
         document.addEventListener('deviceready', this.deviceready, false);
+        document.querySelector('#p1').onclick = app.play;
+        document.querySelector('#p2').onclick = app.onKlik;
     },
     deviceready: function() {
         // This is an event handler function, which means the scope is the event.
@@ -47,6 +49,9 @@ var app = {
         // Play audio
         my_media.play();
 	},
+	onKlik: function() {
+		alert("Klik!");
+	}
 	atEnd: function() {
 		alert("Ended!");
 	}
