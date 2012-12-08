@@ -46,4 +46,17 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+	play: function() {
+		my_media = new Media("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3", 
+							 app.atEnd, app.eRRor);
+        // Play audio
+        my_media.play();
+	},
+	atEnd: function() {
+		alert("Ended!");
+	}
+	eRRor: function() {
+		alert("ErRRO");
+	}
+
 };

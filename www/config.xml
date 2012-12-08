@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.hello-world"
-        version   = "1.0.0">
+        id        = "com.eijuku.phonegaphelloworld"
+        version   = "0.0.0">
 
-    <name>Hello World</name>
+    <name>Bye now World</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Hello World about to turn into something quite else.
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+        PhoneGap Team & ME
     </author>
 
     <!--
@@ -21,6 +21,8 @@
         The "device" permission is required for the 'deviceready' event.
     -->
     <feature name="http://api.phonegap.com/1.0/device" />
+	<feature name="http://api.phonegap.com/1.0/camera"/>
+	<feature name="http://api.phonegap.com/1.0/media"/>
 
     <!--
         If you do not want any permissions to be added to your app, add the
