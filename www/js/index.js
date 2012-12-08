@@ -27,6 +27,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.querySelector('#p1').onclick = app.play;
+        document.querySelector('#p2').onclick = app.onKlik;
     },
     // deviceready Event Handler
     //
@@ -65,6 +67,9 @@ var app = {
         // Play audio
         my_media.play();
 	},
+	onKlik: function() {
+		alert("Klik!");
+	}
 	atEnd: function() {
 		alert("Ended!");
 	}
