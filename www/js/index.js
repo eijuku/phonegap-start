@@ -47,7 +47,7 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
     report: function(id) {
 		/*
         // Report the event in the console
@@ -62,17 +62,45 @@ var app = {
 		*/
     },
 	play: function() {
+
+		//var pictureSource=navigator.camera.PictureSourceType.CAMERA;
+        //var destinationType=navigator.camera.DestinationType.DATA_URL;
+		navigator.camera.getPicture(this.onPhotoDataSuccess, this.onFail, 
+									{ 
+										quality: 50,
+										//destinationType: destinationType
+									}
+								   );
+		/*
 		my_media = new Media("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3", 
 							 app.atEnd, app.eRRor);
         // Play audio
         my_media.play();
+		*/
 	},
+	onPhotoDataSuccess: function(imageData) {
+      // Uncomment to view the base64 encoded image data
+      // console.log(imageData);
+	  // Get image handle
+      //
+      var smallImage = document.getElementById('imgs');
+      // Unhide image elements
+      //
+      smallImage.style.display = 'block';
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      smallImage.src = "data:image/jpeg;base64," + imageData;
+    },
+	onFail: function(message) {
+      alert('Failed because: ' + message);
+    },
 	onKlik: function() {
 		alert("Klik!");
-	}
+	},
 	atEnd: function() {
 		alert("Ended!");
-	}
+	},
 	eRRor: function() {
 		alert("ErRRO");
 	}
